@@ -1,0 +1,44 @@
+# FlyChess Default Configuration File
+# Connectome and Leaky Integrate-and-Fire Simulation Hyperparameters
+
+connectome:
+  seed: 42
+  optic_lobe_columns: 64
+  tactical_glomeruli: 16
+  kenyon_cells: 120
+  mbon_units: 16
+  dan_dopamine_units: 8
+  central_complex_units: 32
+  descending_motor_neurons: 64
+
+lif_neuron:
+  tau_m: 20.0        # Membrane time constant (ms)
+  v_rest: -70.0      # Resting potential (mV)
+  v_reset: -75.0     # Reset potential (mV)
+  v_thresh: -50.0    # Action potential threshold (mV)
+  tau_ref: 2.0       # Absolute refractory period (ms)
+  r_m: 10.0          # Membrane resistance (Megaohms)
+
+synapse:
+  tau_syn_exc: 5.0   # Excitatory current decay (ms)
+  tau_syn_inh: 10.0  # Inhibitory current decay (ms)
+  stdp_lr: 0.005     # Spike-Timing-Dependent Plasticity learning rate
+  tau_stdp: 15.0     # STDP coincidence window (ms)
+  w_min: 0.0
+  w_max: 3.0
+
+simulation:
+  dt_ms: 1.0         # Numerical integration step size (ms)
+  duration_ms: 40.0  # Brain simulation duration per chess move decision (ms)
+
+motor:
+  temperature: 0.4   # Action selection exploration temperature
+  stochastic: true   # Sample from softmax probability distribution
+  capture_boost: 2.0 # Biological predatory reflex bias for captures
+
+training:
+  episodes: 100
+  enable_stdp: true
+  win_reward: 10.0
+  check_reward: 1.5
+  loss_penalty: -10.0

@@ -1,0 +1,6 @@
+{
+  "name": "FlyChess: Drosophila Connectome Chess",
+  "description": "Simulation of a biological fruit fly (Drosophila melanogaster) brain connectome using Leaky Integrate-and-Fire neural dynamics to play chess.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
